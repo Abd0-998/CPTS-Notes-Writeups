@@ -11,8 +11,6 @@ In HTB/CPTS machines and real-world assessments, web applications often use Virt
 
 #### Syntax & Quick Editing
 
-Bash
-
 ```
 # Syntax: <IP_Address> <Hostname> [<Alias> ...]
 
@@ -21,8 +19,6 @@ echo "10.129.x.x target.htb sub.target.htb" | sudo tee -a /etc/hosts
 ```
 
 ## Querying with `dig`
-
-Bash
 
 ```
 # Query IPv4 Address (A Record)
@@ -63,8 +59,6 @@ dig +trace target.htb
 
 When building Bash one-liners or piping output to other tools (`httpx`, `nmap`, `ffuf`), raw `dig` output contains too much clutter. Use these flags to clean it up:
 
-Bash
-
 ```
 # Output ONLY the IP / Answer (Best for scripting)
 dig +short target.htb
@@ -76,8 +70,6 @@ dig +noall +answer target.htb A
 ## Subdomain Brute Forcing
 
 `dnsenum` is a comprehensive Perl-based script that handles standard DNS enumeration, zone transfer attempts, Google scraping, reverse lookups, WHOIS, and active brute-forcing.
-
-Bash
 
 ```
 dnsenum --enum <target.com> -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -r
