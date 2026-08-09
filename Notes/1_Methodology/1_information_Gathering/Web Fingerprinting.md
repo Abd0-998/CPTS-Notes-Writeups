@@ -1,9 +1,10 @@
 ## Manual Banner Grabbing & Header Analysis
+Fetch HTTP response headers only (HEAD request)
 ```
-# Fetch HTTP response headers only (HEAD request)
 curl -I http://<target_domain>
-
-# Follow redirects manually to inspect header changes
+```
+Follow redirects manually to inspect header changes
+```
 curl -I https://<target_domain>
 curl -I https://www.<target_domain>
 ```
@@ -17,23 +18,27 @@ curl -I https://www.<target_domain>
 - **`Link`**: Look for API endpoints or CMS framework signatures (e.g., `[https://www.example.com/wp-json/](https://www.example.com/wp-json/); rel="[https://api.w.org/](https://api.w.org/)"` indicates a WordPress REST API).
 ## (WAF) Detection
 #### wafw00f
-```
-# Installation via Pip
-pip3 install git+https://github.com/EnableSecurity/wafw00f
 
-# Run WAF detection against target
+Installation via Pip
+```
+pip3 install git+https://github.com/EnableSecurity/wafw00f
+```
+Run WAF detection against target
+```
 wafw00f <target_domain>
 ```
 ## Automated Software Identification
 #### Nikto
 While Nikto is primarily a web vulnerability scanner, it includes specific tuning flags to isolate software fingerprinting tests.
+
+Installation
 ```
-# Installation
 git clone https://github.com/sullo/nikto
 cd nikto/program
 chmod +x ./nikto.pl
-
-# Run software identification modules ONLY
+```
+Run software identification modules ONLY
+```
 nikto -h <target_domain> -Tuning b
 ```
 #### Key Flags & Outputs
