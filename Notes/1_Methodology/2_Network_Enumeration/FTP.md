@@ -46,12 +46,12 @@
 | `size file.iso`          | Show remote file size        |
 ## Default Configuration
 
-#### install vsFTPd 
+###### install vsFTPd 
 ```
 $ sudo apt install vsftpd
 ```
 
-#### vsFTPd Config File
+###### vsFTPd Config File
 ```
 $ cat /etc/vsftpd.conf | grep -v "#"
 ```
