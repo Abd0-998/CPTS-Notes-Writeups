@@ -147,7 +147,7 @@ So what brings you here today?
  3    #port=25
  4    ssl=true
  5    user="alex"
- 6    password="lol123!mD"
+ 6    password="******"
  7    from="alex.g@web.dev.inlanefreight.htb"
  8}
  9
@@ -181,7 +181,7 @@ So what brings you here today?
 
 ```
 
-- on the lines 5,4 we can see that there is a username : alex and password : lol123!mD
+- on the lines 5,4 we can see that there is a username : alex and password : [REDACTED FOR HTB POLICIES]
 
 - lets try to enumerate the SMB service using the creds we found 
 
@@ -212,16 +212,17 @@ smb: \> ls
 smb: \> get important.txt 
 getting file \important.txt of size 16 as important.txt (0.1 KiloBytes/sec) (average 0.1 KiloBytes/sec)
 smb: \> !cat important.txt 
-sa:87N1ns@slls83 smb: \> 
+sa:[REDACTED PASSWORD] smb: \> 
 ```
 
-- the file contains a username : sa and password : 87N1ns@slls83
+- the file contains a username : sa and password : [REDACTED FOR HTB POLICIES]
 
 - the sa is the username of the system admin in the SSMS database in windows 
 
 - lets try to connect to the windows server using RDP with the same password we have found 
 
-- i used remmina tool with this creds : username : Administrator and password : 87N1ns@slls83
+- i used remmina tool with this creds : username : Administrator and password : [REDACTED FOR HTB POLICIES]
+  
 
 - then i opened the SMSS and used windows authentication : WINMEDIUM
 
