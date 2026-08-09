@@ -223,8 +223,11 @@ sa:[REDACTED PASSWORD] smb: \>
 
 - i used remmina tool with this creds : username : Administrator and password : [REDACTED FOR HTB POLICIES]
   
+<img width="1063" height="701" alt="image" src="https://github.com/user-attachments/assets/d649c65e-11a9-4c75-93dc-9759fe09fcb0" />
 
 - then i opened the SMSS and used windows authentication : WINMEDIUM
+
+<img width="643" height="429" alt="image" src="https://github.com/user-attachments/assets/be41fdc1-6478-4326-8826-16940c16a610" />
 
 - then in the SMSS follow this path : Databases --> accounts --> Tables 
 
