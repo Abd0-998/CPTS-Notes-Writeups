@@ -147,7 +147,7 @@ So what brings you here today?
  3    #port=25
  4    ssl=true
  5    user="alex"
- 6    password="lol123!mD"
+ 6    password="[REDACTED FOR HTB POLICES]"
  7    from="alex.g@web.dev.inlanefreight.htb"
  8}
  9
@@ -181,7 +181,7 @@ So what brings you here today?
 
 ```
 
-- on the lines 5,4 we can see that there is a username : alex and password : lol123!mD
+- on the lines 5,4 we can see that there is a username : alex and password : [REDACTED FOR HTB POLICES]
 
 - lets try to enumerate the SMB service using the creds we found 
 
@@ -212,18 +212,24 @@ smb: \> ls
 smb: \> get important.txt 
 getting file \important.txt of size 16 as important.txt (0.1 KiloBytes/sec) (average 0.1 KiloBytes/sec)
 smb: \> !cat important.txt 
-sa:87N1ns@slls83 smb: \> 
+sa:[REDACTED FOR HTB POLICES] smb: \> 
 ```
 
-- the file contains a username : sa and password : 87N1ns@slls83
+- the file contains a username : sa and password : [REDACTED FOR HTB POLICES]
 
 - the sa is the username of the system admin in the SSMS database in windows 
 
 - lets try to connect to the windows server using RDP with the same password we have found 
 
-- i used remmina tool with this creds : username : Administrator and password : 87N1ns@slls83
+- i used remmina tool with this creds : username : Administrator and password : [REDACTED FOR HTB POLICES]
+
+<img width="1063" height="701" alt="image" src="https://github.com/user-attachments/assets/7cb2c22e-cabd-4376-a7dd-8e2ef3d0047d" />
+
 
 - then i opened the SMSS and used windows authentication : WINMEDIUM
+
+<img width="643" height="429" alt="image" src="https://github.com/user-attachments/assets/f53685c3-4201-4b88-8ed1-4d6d59a65afa" />
+
 
 - then in the SMSS follow this path : Databases --> accounts --> Tables 
 
