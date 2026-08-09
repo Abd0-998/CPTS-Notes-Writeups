@@ -3,33 +3,32 @@
 ```
 sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248
 ```
-
-- A comprehensive Nmap scan targeting the default MSSQL port (1433). It runs multiple specialized NSE scripts to extract the hostname, instance name, software version, NTLM info, enabled named pipes, and tests for empty passwords on the default `sa` (system administrator) account.
+###### A comprehensive Nmap scan targeting the default MSSQL port (1433). It runs multiple specialized NSE scripts to extract the hostname, instance name, software version, NTLM info, enabled named pipes, and tests for empty passwords on the default `sa` (system administrator) account.
 ## Metasploit Enumeration
 
 ```
 msfconsole
 ```
     
-Launches the Metasploit Framework.
+###### Launches the Metasploit Framework.
         
 ```
 use auxiliary/scanner/mssql/mssql_ping
 ```
     
-Selects the `mssql_ping` auxiliary module, which broadcasts a request to discover MSSQL instances and extract detailed server information.
+###### Selects the `mssql_ping` auxiliary module, which broadcasts a request to discover MSSQL instances and extract detailed server information.
         
 ```
 set rhosts 10.129.201.248
 ```
     
-Sets the target IP address for the Metasploit scanner.
+###### Sets the target IP address for the Metasploit scanner.
         
 ```
 run
 ```
     
-Executes the scanner to retrieve the ServerName, InstanceName, Version, TCP port, and Named Pipes (e.g., `\\SQL-01\pipe\sql\query`).
+###### Executes the scanner to retrieve the ServerName, InstanceName, Version, TCP port, and Named Pipes (e.g., `\\SQL-01\pipe\sql\query`).
 
 ## Client Setup & Connection (Impacket)
 
@@ -37,13 +36,13 @@ Executes the scanner to retrieve the ServerName, InstanceName, Version, TCP port
 locate mssqlclient
 ```
     
-Searches your local Linux system for the path to Impacket's `mssqlclient.py` script, which is one of the most reliable command-line clients for pentesting MSSQL.
+###### Searches your local Linux system for the path to Impacket's `mssqlclient.py` script, which is one of the most reliable command-line clients for pentesting MSSQL.
         
 ```
 python3 mssqlclient.py Administrator@10.129.201.248 -windows-auth
 ```
     
-Connects to the remote MSSQL server using Windows Authentication. This forces the underlying Windows OS/Active Directory to process the login request instead of native SQL authentication.
+###### Connects to the remote MSSQL server using Windows Authentication. This forces the underlying Windows OS/Active Directory to process the login request instead of native SQL authentication.
 
 ## Database Enumeration (Inside the T-SQL Shell)
 
@@ -51,7 +50,7 @@ Connects to the remote MSSQL server using Windows Authentication. This forces th
 select name from sys.databases
 ```
 
-**Usage:** A Transact-SQL (T-SQL) query executed inside the `mssqlclient` shell to list all databases present on the server. Look for default system databases (`master`, `model`, `msdb`, `tempdb`) alongside custom application databases.
+###### A Transact-SQL (T-SQL) query executed inside the `mssqlclient` shell to list all databases present on the server. Look for default system databases (`master`, `model`, `msdb`, `tempdb`) alongside custom application databases.
 
 ## Config Analysis & Dangerous Settings (Checklist)
 
