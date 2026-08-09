@@ -107,7 +107,7 @@ ONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY LITERAL+ NOTIF
 
 - now we can fetch the existing message by selecting its number and specifying the content we need to see which is the body text
 
-![[Pasted image 20260809184506.png]]
+<img width="956" height="389" alt="image" src="https://github.com/user-attachments/assets/18874526-f5be-4e12-ae16-d28ee8d101d1" />
 
 - we got a SSH key which we can use to connect to the user’s device
 - then i copied the SSH key to a file named id_rsa to use it , and as we made before we have to change the file permissions to be able to use it
@@ -122,16 +122,19 @@ ssh -i id_rsa tom@10.129.202.20
 
 - after accessing the user device i listed the content to see what we got :
 
-![[Pasted image 20260809184533.png]]
+<img width="766" height="388" alt="image" src="https://github.com/user-attachments/assets/9d5090cf-7282-47b9-83c9-ce19a66e61cc" />
+
 
 - we can see there are two important files : .bash_history and .mysql_history
 - lets see the content of the mysql file first
 
-![[Pasted image 20260809184640.png]]
+<img width="482" height="250" alt="image" src="https://github.com/user-attachments/assets/1f156414-24fd-495c-a9b0-34fc1af05b06" />
+
+
 
 - this file reveals that there is a DB called users containing a table called users and there is a high posability to find the user HTB creds here
 - lets connect to the MySQL server using toms credentials
 
-![[Pasted image 20260809184648.png]]
+<img width="915" height="795" alt="image" src="https://github.com/user-attachments/assets/ffbe11a3-d714-4910-8197-5042acd9ef29" />
 
 - here we found the password which is the answer of the question
