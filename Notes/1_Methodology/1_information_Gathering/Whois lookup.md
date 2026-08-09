@@ -3,14 +3,14 @@
 sudo apt update && sudo apt install whois -y
 ```
     
-    - Installs the `whois` command-line utility on Debian/Ubuntu-based systems (like Parrot OS or Kali Linux) if it is not already present.
+Installs the `whois` command-line utility on Debian/Ubuntu-based systems (like Parrot OS or Kali Linux) if it is not already present.
 
 ## Basic Enumeration
 ```
 whois <domain.com> 
 ```
     
-    - Queries the public WHOIS database to retrieve registration and ownership details about a specific domain.
+Queries the public WHOIS database to retrieve registration and ownership details about a specific domain.
 
 ## Key data points 
 
