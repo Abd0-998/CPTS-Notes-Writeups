@@ -78,52 +78,52 @@ openssl s_client -connect 10.129.14.128:imaps
 USER username
 ```
     
-    - Submits the username for identification to the server.
+###### Submits the username for identification to the server.
         
 ```
 PASS password
 ```
     
-    - Authenticates the identified user using their password.
+###### Authenticates the identified user using their password.
         
 ```
 STAT
 ```
     
-    - Requests the number of saved emails and their total size from the server.
+###### Requests the number of saved emails and their total size from the server.
         
 ```
 LIST
 ```
     
-    - Requests all emails, including their specific ID numbers and sizes.
+###### Requests all emails, including their specific ID numbers and sizes.
         
 ```
 RETR id
 ```
     
-    - (reads) the contents of a specific email using its assigned ID number.
+###### (reads) the contents of a specific email using its assigned ID number.
         
 ```
 DELE id
 ```
     
-    - Marks a specific email to be deleted from the server using its ID.
+###### Marks a specific email to be deleted from the server using its ID.
         
 ```
 CAPA
 ```
     
-    - Requests the server to display its capabilities and supported extensions.
+###### Requests the server to display its capabilities and supported extensions.
         
 ```
 RSET
 ```
     
-    - Resets the session and clears any actions that haven't been committed yet.
+###### Resets the session and clears any actions that haven't been committed yet.
         
 ```
 QUIT
 ```
     
-    - Closes connection with the POP3 server and commits any pending deletions.
+###### Closes connection with the POP3 server and commits any pending deletions.
