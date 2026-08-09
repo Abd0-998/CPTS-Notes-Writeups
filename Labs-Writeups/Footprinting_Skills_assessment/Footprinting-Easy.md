@@ -4,7 +4,7 @@ We were commissioned by the company `Inlanefreight Ltd` to test three differen
 
 The first server is an internal DNS server that needs to be investigated. In particular, our client wants to know what information we can get out of these services and how this information could be used against its infrastructure. Our goal is to gather as much information as possible about the server and find ways to use that information against the company. However, our client has made it clear that it is forbidden to attack the services aggressively using exploits, as these services are in production.
 
-Additionally, our teammates have found the following credentials "ceil:qwer1234", and they pointed out that some of the company's employees were talking about SSH keys on a forum.
+Additionally, our teammates have found the following credentials "ceil:qw***", and they pointed out that some of the company's employees were talking about SSH keys on a forum.
 
 The administrators have stored a `flag.txt` file on this server to track our progress and measure success. Fully enumerate the target and submit the contents of this file as proof.
 
@@ -65,7 +65,7 @@ Nmap done: 1 IP address (1 host up) scanned in 261.29 seconds
 - port 21 ftp : the banner revealed to us a important subdomain name : ftp.int.inlanefreight.htb
 - port 53 DNS : the service is bind which will help us to gain more info about the target network
 - port 2121 : the banner reveals the name of the server ceil’s FTP
-- The next step i used the given creds : ceil:qwer1234 to login into the FTP server :
+- The next step i used the given creds : ceil:q**** to login into the FTP server :
 
 ```
 $ftp 10.129.123.254 2121 
@@ -166,8 +166,6 @@ find / -type f -name flag.txt 2>/dev/null
 ceil@NIXEASY:~$ find / -type f -name flag.txt 2>/dev/null
 /home/flag/flag.txt
 ceil@NIXEASY:~$ cd /home/flag
-ceil@NIXEASY:/home/flag$ ls
-flag.txt
 ceil@NIXEASY:/home/flag$ cat flag.txt
 HTB{}
 ```
