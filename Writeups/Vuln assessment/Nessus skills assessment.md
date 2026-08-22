@@ -21,15 +21,18 @@ Alternatively, use the pre-populated scan data to answer the questions below wit
 
 - First as required in the assessment i created a new Basic Network scan and named it Network scan and then added the target ip : `172.16.16.100`
 
-![[Screenshot 2026-08-12 at 9.16.29 AM.png]]
+<img width="1068" height="553" alt="image" src="https://github.com/user-attachments/assets/08ab4a76-93b6-4e47-b5b3-32b8712c04d8" />
+
 
 - then in the Discovery toggle i selected the option : Port scan all ports 
 
-![[Screenshot 2026-08-12 at 9.17.17 AM.png]]
+<img width="1062" height="540" alt="image" src="https://github.com/user-attachments/assets/e78f669a-b8a3-4889-8866-753511f809dc" />
+
 
 - then i added the credentials given to be the auth method in this scan 
 
-![[Screenshot 2026-08-12 at 9.20.25 AM.png]]
+<img width="1056" height="380" alt="image" src="https://github.com/user-attachments/assets/5f4476e3-f2da-47de-82b6-c33d71e8d741" />
+
 
 *NOTE* : this scan could take 60 min , in the assessment there are a ready results of the scans to do the assessment on it without wating
 ### First Question : 
@@ -38,7 +41,8 @@ Alternatively, use the pre-populated scan data to answer the questions below wit
 
 - in the My Scans Tab i selected the Windows_basic_authed scan results and selected the Vulnerabilities Tab and searched for SMB shares : 
 
-![[Screenshot 2026-08-12 at 9.27.18 AM 1.png]]
+<img width="1266" height="710" alt="image" src="https://github.com/user-attachments/assets/b83146f6-2eb6-4571-82d2-1d3e3af80221" />
+
 
 - as we see there was only 2 results both of them reveals the names of the accessible SMB shares submit any share name as the answer 
 
@@ -48,7 +52,8 @@ Alternatively, use the pre-populated scan data to answer the questions below wit
 
 - get back to the My Scans file and choose the Windows_basic_authed and select the hosts tab it will reveal the target ip of the scan
 
-![[Screenshot 2026-08-12 at 9.34.22 AM.png]]
+<img width="1255" height="568" alt="image" src="https://github.com/user-attachments/assets/207fbaa5-065d-4030-8dd6-97f42e2bcb99" />
+
 
 ### Third Question 
 
@@ -56,11 +61,13 @@ Alternatively, use the pre-populated scan data to answer the questions below wit
 
 - again select My Scans tab then choose the  Windows_basic_authed scan and then select the Vulnerabilities tab and click on the score toggle to sort it with the highest CVSS score : 
 
-![[Screenshot 2026-08-12 at 9.38.52 AM.png]]
+<img width="1224" height="693" alt="image" src="https://github.com/user-attachments/assets/9a8b74d3-fa7f-49f5-9d99-a5285a67d17f" />
+
 
 - then choose the first one at the top and get its plugin id : 
 
-![[Screenshot 2026-08-12 at 9.41.28 AM.png]]
+<img width="1079" height="335" alt="image" src="https://github.com/user-attachments/assets/ca147a96-4668-4762-b4c0-bb7d5388c9e9" />
+
 
 ### Fourth Question 
 
@@ -68,18 +75,21 @@ Alternatively, use the pre-populated scan data to answer the questions below wit
 
 - first click on the report button on the top right to make a report withe all the included vulnerabilities  :
 
-![[Screenshot 2026-08-12 at 9.46.56 AM.png]]
+<img width="1089" height="361" alt="image" src="https://github.com/user-attachments/assets/f5da58cf-ce96-47c7-bf85-b71223a3309c" />
+
 
 - then choose the report format to be .csv and make sure to check true on the plugin ID checkbox 
 
-![[Screenshot 2026-08-12 at 9.48.43 AM.png]]
+<img width="622" height="447" alt="image" src="https://github.com/user-attachments/assets/08655c30-2e48-4bcf-8154-e8d22e310b3c" />
+
 
 - then download the report and cd to the directory where it was downloaded and use this command to find the Vulnerability name of the Plugin id : 26925
 ```
 cat Windows_basic_authed_3lk7gh.csv | grep 26925
 ```
 
-![[Screenshot 2026-08-12 at 9.52.43 AM.png]]
+<img width="728" height="92" alt="image" src="https://github.com/user-attachments/assets/a0f38fd3-e6ab-41ab-9615-6cb5a45ced09" />
+
 
 ### Fifth Question 
 
